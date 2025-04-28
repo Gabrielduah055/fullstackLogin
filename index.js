@@ -5,6 +5,7 @@ import connectDB from './config/mongodb.js';
 import bcrypt from 'bcrypt';
 import cookieParser from 'cookie-parser';
 import authRoutes from './routes/authRoutes.js';
+import userRoutes from './routes/userRoutes.js';
 
 
 const app = express();
@@ -20,6 +21,7 @@ app.use(cookieParser())
 
 //api endpoints
 app.use('/api/auth', authRoutes)
+app.use('/api/user', userRoutes)
 app.get('/', (req, res) => {
     res.send('Hello World!');
 });
